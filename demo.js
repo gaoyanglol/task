@@ -3,8 +3,8 @@
 var fs = require('fs')
 var dirName = process.argv[2]
 fs.stat(dirName, function(err, stat){
-  if (stat && stat.isFile()) {
-    process.exit(0)
+  if (stat) {
+    process.exit(1)
   } else {
     fs.mkdirSync("./" + dirName)
     process.chdir("./" + dirName)
